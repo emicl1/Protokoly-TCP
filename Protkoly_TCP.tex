@@ -36,7 +36,7 @@ right=10mm
 \vspace{4cm}
 
 
-\hspace{-2.1cm}
+\hspace{-2.2cm}
 \huge\textbf{Maturtní práce}
 
 \vspace{1.5cm}
@@ -59,12 +59,28 @@ right=10mm
 \Large\textbf{Školní rok 2023 } 		
 
 
-\begin{flushright} 
-\end{flushright}
+
+\thispagestyle{empty}
+\clearpage
+\Large\textbf{Prohlašení}
+\\
+\vspace{2cm}
+Prohlašuji, že jsem maturitní práci vypracovala samostatně a s vyznačením všech 
+použitých pramenů.
+\\
+\vspace{5cm}
+V Českých Budějovicích dne 12. 2. 2022 ……………
 \thispagestyle{empty}
 
 
+\clearpage
+\Large\textbf{Abstrakt}
 
+\thispagestyle{empty}
+\clearpage
+\Large\textbf{Poděkování}
+
+\thispagestyle{empty}
 
 
 \clearpage
@@ -72,7 +88,7 @@ right=10mm
 \thispagestyle{empty}
 \clearpage
 \section{Úvod}
-
+\setlength{\parindent}{14.17pt}
 \subsection{historie TCP/IP}
 V roce 1966 se povedlo v USA Bobu Taylorovi úspěšně sehnat finance od Charles Maria Herzfeld, ředitele ARPA,\footnote{Nyní známo jako DARPA(Defense Advanced Research Projects Agency) je výkonná moc ministerstva obrany Spojených států amerických, které je pověřena vývojem technologií pro vojenské účely} na projekt ARPANET, který měl umožnit přístup k počítačům na velké vzdálenosti. V dalších třech letech se rohodlo o počáteční standardech pro identifikaci, autentizaci uživatelů, přenos znaků a kontrolu a roku 1969 byl ARPANET poprvé použit firmou BBN. 
 Při dalším výzkmu a pokusech o vytvoření nového modulu ARPANET, dva vědci Robert Elliot Kahn a Vinton Gray Cerf vytvořili nový model, kde hlavní zodpovědnost za spolehlivost byla předána uživateli místo sítě. Tímto roku 1974 vznikl nový protokol Transmission Control Program, který byl vydán v RFC\footnote{žádost o komentáře - označuje dokumenty popisující internetové protkoly} 675 s názvem Specification of Internet Transmission Control Program, avšak tato verze nebyla funkční až do roku 1981, kdy byla zprovozněna verzí 4. Je standardizována pomocí RFC 791 - Internet Protocol(IP) a RFC 793 Transmission Control Protocol(TCP). 
@@ -80,9 +96,23 @@ Při dalším výzkmu a pokusech o vytvoření nového modulu ARPANET, dva vědc
 TCP i IP, prošlo s postupem času velkým vývojem, kdy vznikalo stovky aktualizací. Například roku 1994 vzniklo Internet Protocol next generation (IPng), který zavadí IP verzi 6. Nyní se aktivně používá 10+ variant TCP na Linuxu. MacOS a Windows je má zavedeno jako výchozí nastavení. 
 
 \subsection{Základy komunikace aplikací na úrovni TCP/IP}
+TCP/IP je rodina protokolů, která umoňuje komunikaci uzlů\footnote{bod přerozdělení nebo koncový bod komunikace} a to pomocí end-to-end\footnote{snaží se o to, aby důležité role sítě byly řešeny konečným úzlem} principu a specifikováním toho jak by data měla být připravena, adresována, přenášena, směrována a přijmána. Tyto protokoly jsou nejčastěji děleny do čtyř úrovní Link, Internet, Transport a Application. 
+\subsection{Principy TCP/IP}
+TCP/IP stojí na několika zásadních principech jako client-server, encapsulace, stateless a robustnost. 
+\\
+Client-server princip je vztah kde jeden úzel požádá o službu nebo
+ prostředek druhý úzel. V TCP/IP modelu je uživatel  client(je mu poskytována služba) a další počítač je server. 
+\\
+Encapsulace je prncip, který používá abstraktní dělení TCP/IP do čtyř úrovní. V každé takové úrovni se k původním datům přidávají další data, tak aby mohli být odeslány přes síť. Opačný proces, kdy uživatel se snaží dostat data se nazývá deencapsulace 
+\\
+Rodina TCP/IP protokolů je nazývána jako stateless. Tento princip říká, že jakákoliv žádost o službu od uživatele je nazávislá na té předchozí. Toto umožňuje lepší plynulost sítě, jelikož síťové cesty mohou být používány nepřetržitě.
+\\
+Robustnost je princip, který dbá na to, aby uživatel neposílal žádné data, které by mohli způsobit problém druhému uživateli při procházení TCP vrstvami. Zároveň se snaží předvídat vše co dostane od druhého uživatele, co by mohlo způsobit problém a s případnými problémy nakládá liberálně.
 
 \subsection{Link layer}
-
+Link layer je nejnižší úroveň TCP/IP, fyzická a logická. Na fyzické úrovni jsou všechna zařízení, kabely a etc., která konkrétně posílají bity. Protokoly na této úrovni jsou standardizovány IEEE\footnote{Institute of Electrical and Electronics Engineers}, například jsem patří protokol Ethernet\footnote{kabely s kroucenou dvojlinkou}, Wi-Fi, etc.
+ \\
+Další součastí link úrovně je logická část, tato úroveň protokolů spojuje pouze síťový segment\footnote{část počítačové sítě} a posílá takzvané frame pouze v LAN(lokální síť). Toto propojení zajištuje pomocí různých protokolů, jako například ARP(Address Resolution Protocol), který umožňuje switchy, aby rozpoznal MAC adresy zařízení. Tato část se dále dělí na podčásti a to LLC a MAC podčást. LLC podčást umožňuje adresování a kontrolu logické části. Dále specifikuje mechanismy, pro zařízení, které adresují a kontroluje data, která jsou vyměněna mezi zařízeními. MAC podčást má zodpovědnost za možnost přístupu k mediu (CSMA/CD), nebo tento problém řeší pomocí MAC adres. 
 \subsection{Internet layer}
 
 \subsection{Transport layer}
@@ -110,28 +140,45 @@ TCP i IP, prošlo s postupem času velkým vývojem, kdy vznikalo stovky aktuali
 \url{}
 \\
 \subsection{základy komunikace aplikací na úrovni TCP/IP}
-\url{}
+\url{https://www.techtarget.com/searchnetworking/definition/TCP-IP}
 \\
-\url{}
+\url{https://wikijii.com/wiki/node_(networking)}
 \\
-\url{}
+\url{https://en.wikipedia.org/wiki/End-to-end_principle}
 \\
-\url{}
+\subsection{Principy TCP/IP}
+\url{https://www.bigcommerce.com/ecommerce-answers/what-is-tcp-ip/}
 \\
-\url{}
+\url{https://www.techtarget.com/searchnetworking/definition/TCP-IP}
 \\
-\url{}
+\url{https://www.techtarget.com/searchnetworking/definition/client-server}
 \\
-\url{}
+\url{https://www.geeksforgeeks.org/tcp-ip-model/}
 \\
+\url{https://www.youtube.com/watch?v=3b_TAYtzuho}
+\\
+\url{https://www.oreilly.com/library/view/tcpip-guide/9781593270476/ch45s04.html}
 \subsection{Link layer}
+\url{https://www.youtube.com/watch?v=3b_TAYtzuho}
+\\
+\url{https://cs.wikipedia.org/wiki/Ethernet}
+\\
+\url{https://en.wikipedia.org/wiki/Link_layer}
+\\
+\url{https://en.wikipedia.org/wiki/Data_link_layer}
+\\
+\url{https://en.wikipedia.org/wiki/Address_Resolution_Protocol}
+\\
 \url{}
+\\
+\url{}
+
 \subsection{Internet layer}
-\url{}
+\url{https://www.youtube.com/watch?v=3b_TAYtzuho}
 \subsection{Transport layer}
-\url{}
+\url{https://www.youtube.com/watch?v=3b_TAYtzuho}
 \subsection{Application layer}
-\url{}
+\url{https://www.youtube.com/watch?v=3b_TAYtzuho}
 
 
 
