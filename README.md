@@ -7,3 +7,7 @@ V další části práce popíše návrh vlastního aplikačního pro-tokolu rod
 se pak prakticky pokusí tento návrh protokolu realizovat na konkrétní síťové komunikaci jednoduchého 
 mikropočítače s aplikací na osobním počítači. V závěru práce pak zhodnotí pozitiva a negativa navrženého 
 protokolu a případně navrhne směr jeho dalšího vývoje.   
+
+
+
+
